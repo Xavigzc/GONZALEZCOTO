@@ -32,7 +32,6 @@ class Clientes():
         '''
         try:
            dni = var.ui.EditDNI.text()
-           print(dni)
            if Clientes.ValidarDni(dni):
                var.ui.lblValidar.setStyleSheet('QLabel {color: green;}')
                var.ui.lblValidar.setText('V')
@@ -55,3 +54,23 @@ class Clientes():
 
         except Exception as error:
             print('Error %s' % str(error))
+
+        def selPago():
+            try:
+                if var.ui.chkEfect.isChecked():
+                    print('Pagas con efectivo')
+                if var.ui.chkTar.isChecked():
+                    print('Pagas con Tarjeta')
+                if var.ui.chkTran.isChecked():
+                    print('Pagas con Transferencia')
+
+
+            except Exception as error:
+                print('Error %s' % str(error))
+
+        def selProv(prov):
+            try:
+               print('Has seleccionado la provincia de ' + prov)
+               return prov
+            except Exception as error:
+                print('Error %s' % str(error))
